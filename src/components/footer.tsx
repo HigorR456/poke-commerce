@@ -19,17 +19,15 @@ const Footer = () => {
                     </div>
                     
                     <div className='second-row'>
-                        <div className='legal'>
-                            <div className='legal-text'>
-                                <FaRegCopyright className='copyright' />&nbsp;
-                                2023. All rights Reserved.
-                            </div>
+                        <div className='legal-text'>
+                            <FaRegCopyright className='copyright' />&nbsp;
+                            2023. All rights Reserved. Developed by Higor.
+                        </div>
 
-                            <div className='legal-links'>
-                                <a>License</a>
-                                <a>Terms</a>
-                                <a>Privacy</a>
-                            </div>
+                        <div className='legal-links'>
+                            <a>License</a>
+                            <a>Terms</a>
+                            <a>Privacy</a>
                         </div>
                     </div>
                 </div>

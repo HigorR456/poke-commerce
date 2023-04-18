@@ -32,7 +32,7 @@
                     text-align: center;
                     line-height: 75px;
                     font-size: 75px;
-                    @media all and (max-width: 680px) { 
+                    @media all and (max-width: 720px) { 
                         font-size: 60px; line-height: 60px; }
                     @media all and (max-width: 450px) { 
                         font-size: 50px; line-height: 50px; }
@@ -192,7 +192,7 @@
                     
                     img {
                         height: 200px; 
-                        @media all and (max-width: 330px) { height: 180px; }
+                        @media all and (max-width: 340px) { height: 130px; }
                     }
                     .text-wrap {
                         display: flex;
