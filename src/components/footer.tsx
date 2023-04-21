@@ -13,14 +13,14 @@ const Footer = () => {
                         </div>
                         <div className='links'>
                             <Link href='/' className='footer-link'>Home</Link>
-                            <Link href='/' className='footer-link'>Products</Link>
+                            <Link href='/Products' className='footer-link'>Products</Link>
                             <Link href='/' className='footer-link'>About</Link>
                         </div>
                     </div>
                     
                     <div className='second-row'>
                         <div className='legal-text'>
-                            <FaRegCopyright className='copyright' />&nbsp;
+                            <FaRegCopyright className='copyright' />
                             2023. All rights Reserved. Developed by Higor.
                         </div>
 

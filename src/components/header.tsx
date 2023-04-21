@@ -28,7 +28,7 @@ const Header = () => {
 
                     <nav className='nav-bar'>
                         <Link href='/' className='nav-link'>Home</Link>
-                        <Link href='/' className='nav-link'>Products</Link>
+                        <Link href='/products/1' className='nav-link'>Products</Link>
                         <Link href='/' className='nav-link'>About</Link>
                     </nav>
                 </div>
