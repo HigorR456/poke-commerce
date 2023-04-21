@@ -55,7 +55,6 @@ const Products = ({products}: any) => {
             <main className="main-products-wrap">
                 <section>
                     <div className='container'>
-                        <h1>Hello world</h1>
                         <div className="products-wrap">
                             {data.map((e: any) => {
                                 const results = 
