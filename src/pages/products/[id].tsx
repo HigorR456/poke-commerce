@@ -37,8 +37,8 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 const Products = ({products, pageNumber}: any) => {
-    const [data, setData] = useState(products.products);
-    const [page, setPage] = useState([...pageNumber.page]);
+    const [data, setData] = useState(products?.products);
+    const [page, setPage] = useState([...pageNumber?.page]);
 
     const handleNavigation = (e: any) => {
         console.log(+page[0] +page[1])
@@ -72,9 +72,9 @@ const Products = ({products, pageNumber}: any) => {
 
                         <div className="navigation-wrap">
                             <div>Page {page}</div>
-                            <Link href={'/products/'+(page.length > 1 ? +(page[0] +page[1]) -1 : (+page[0] - 1))}>
+                            <Link href={'/products/'+(page?.length > 1 ? +(page[0] +page[1]) -1 : (+page[0] - 1))}>
                             <button id='prev' onClick={handleNavigation}>Prev</button></Link>
-                           <Link href={'/products/'+(page.length > 1 ? +(page[0] +page[1]) +1 : (+page[0] +1))}>
+                           <Link href={'/products/'+(page?.length > 1 ? +(page[0] +page[1]) +1 : (+page[0] +1))}>
                             <button id='next' onClick={handleNavigation}>Next</button></Link>
                         </div>
                     </div>
