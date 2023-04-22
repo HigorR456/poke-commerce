@@ -29,23 +29,19 @@ export const getStaticProps: GetStaticProps = async (context) => {
     })
 
     const products = await Promise.all(promises);
+    const page = params.id;
     
     return {
-        props: {products,},
+        props: {products: {products}, pageNumber: {page}},
     }
 }
 
-const Products = ({products}: any) => {
-    const [data, setData] = useState(products);
-    const [page, setPage] = useState(1);
+const Products = ({products, pageNumber}: any) => {
+    const [data, setData] = useState(products.products);
+    const [page, setPage] = useState([...pageNumber.page]);
 
     const handleNavigation = (e: any) => {
-        console.log(e.target.value )
-        if (e.target.id === 'prev') {
-            setPage(page - 1);
-        } else { 
-            setPage(page + 1); 
-        }
+        console.log(+page[0] +page[1])
     }
 
     return (
@@ -56,11 +52,11 @@ const Products = ({products}: any) => {
                 <section>
                     <div className='container'>
                         <div className="products-wrap">
-                            {data.map((e: any) => {
+                            {data?.map((e: any) => {
                                 const results = 
                                 <div key={e.name} className='product'> 
                                     <div className='image-wrap'>
-                                        <img className='image' src={e.sprites.other.dream_world.front_default ? e.sprites.other.dream_world.front_default : e.sprites.other.home.front_default} alt={e.name}></img>
+                                        <img className='image' src={e.sprites.other.dream_world.front_default ? e.sprites.other.dream_world.front_default : e.sprites.other['official-artwork'].front_default} alt={e.name}></img>
                                     </div>
 
                                     <div className='description-wrap'>
@@ -76,9 +72,9 @@ const Products = ({products}: any) => {
 
                         <div className="navigation-wrap">
                             <div>Page {page}</div>
-                            <Link href={'/products/'+(page-1)}>
+                            <Link href={'/products/'+(page.length > 1 ? +(page[0] +page[1]) -1 : (+page[0] - 1))}>
                             <button id='prev' onClick={handleNavigation}>Prev</button></Link>
-                           <Link href={'/products/'+(page+1)}>
+                           <Link href={'/products/'+(page.length > 1 ? +(page[0] +page[1]) +1 : (+page[0] +1))}>
                             <button id='next' onClick={handleNavigation}>Next</button></Link>
                         </div>
                     </div>
