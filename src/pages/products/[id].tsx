@@ -15,7 +15,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         console.log(pages);
     }
     
-    return { paths: pages, fallback: false, }
+    return { paths: pages, fallback: true, }
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
