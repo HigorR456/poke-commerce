@@ -63,7 +63,7 @@ const Products = ({products}: any) => {
                         <div className="navigation-wrap">
                             <div>Page {page}</div>
                             <button id='prev' onClick={handleNavigation}>Prev</button>
-                            <button id='next' onClick={handleNavigation}><Link href='/products/[nav]'></Link>Next</button>
+                            <button id='next' onClick={handleNavigation}><Link href='/products/2'></Link>Next</button>
                         </div>
                     </div>
                 </section>
