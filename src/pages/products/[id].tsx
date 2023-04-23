@@ -9,7 +9,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
     const list = await response.json();
 
     let pages = [];
-    for (let i = 0; i < (Math.ceil(list.count/20)); i++) {
+    //for (let i = 0; i < (Math.ceil(list.count/20)); i++)
+    for (let i = 0; i < 8; i++) {
         pages.push({ params: { id: i.toString() } });
         console.log(pages);
     }
