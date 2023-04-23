@@ -1,9 +1,8 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import Link from 'next/link'
-import { GetStaticProps, GetStaticPaths } from 'next'
-import { useRouter } from 'next/router'
+import { GetStaticProps } from 'next'
 
 export const getStaticProps: GetStaticProps = async (params) => {
     const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=');
