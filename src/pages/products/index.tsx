@@ -10,7 +10,14 @@ export const getStaticProps: GetStaticProps = async (params) => {
 
     const promises = list.results.map((pokemon: any) => {
         return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
-        .then(res => res.json());
+        .then(res => res.json())
+        .then(res => {
+            return {
+                name: res.name, 
+                exp: res.base_experience, 
+                image: res.sprites.other.dream_world.front_default,
+            }
+        })
     })
 
     const products = await Promise.all(promises);
@@ -21,7 +28,7 @@ export const getStaticProps: GetStaticProps = async (params) => {
 }
 
 const Products = ({products}: any) => {
-    const [data, setData] = useState(products);
+    const data = products;
     const [page, setPage] = useState(1);
 
     const handleNavigation = (e: any) => {
@@ -45,11 +52,11 @@ const Products = ({products}: any) => {
                                 const results = 
                                 <div key={e.name} className='product'> 
                                     <div className='image-wrap'>
-                                        <img className='image' src={e.sprites.other.dream_world.front_default} alt={e.name}></img>
+                                        <img className='image' src={e.image} alt={e.name}></img>
                                     </div>
 
                                     <div className='description-wrap'>
-                                        <div className='price'>${e.base_experience.toFixed(2)}</div>
+                                        <div className='price'>${e.exp?.toFixed(2)}</div>
                                         <div className='name'>{e.name}</div>
                                     </div>
                                 </div>
@@ -62,7 +69,7 @@ const Products = ({products}: any) => {
                         <div className="navigation-wrap">
                             <div>Page {page}</div>
                             <button id='prev' onClick={handleNavigation}>Prev</button>
-                            <button id='next' onClick={handleNavigation}><Link href='/products/2'></Link>Next</button>
+                           <Link href='/products/2'><button id='next' onClick={handleNavigation}>Next</button></Link>
                         </div>
                     </div>
                 </section>
