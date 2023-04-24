@@ -5,21 +5,23 @@ import Link from 'next/link'
 import { GetStaticProps, GetStaticPaths } from 'next'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
-    const list = await response.json();
+    //const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
+    //const list = await response.json();
 
     let pages = [];
     //for (let i = 0; i < (Math.ceil(list.count/20)); i++)
-    for (let i = 0; i < 8; i++) {
+    for (let i = 1; i < 9; i++) {
         pages.push({ params: { id: i.toString() } });
         console.log(pages);
     }
     
-    return { paths: pages, fallback: false, }
+    return { 
+        paths: pages,
+        fallback: false, }
 }
 
-export const getStaticProps: GetStaticProps = async (context) => {
-    const { params }: any = context
+export const getStaticProps: GetStaticProps = async (content) => {
+    const { params }: any = content
     const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${params.id === 1 ? 1 : (params.id - 1) * 20}`);
     const list = await response.json();
 
@@ -37,11 +39,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
 }
 
 const Products = ({products, pageNumber}: any) => {
-    const [data, setData] = useState(products?.products);
-    const [page, setPage] = useState([...pageNumber?.page]);
+    const data = (products?.products);
+    const page = ([...pageNumber?.page]);
 
     const handleNavigation = (e: any) => {
-        console.log(+page[0] +page[1])
     }
 
     return (
