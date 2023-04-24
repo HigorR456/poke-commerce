@@ -27,7 +27,14 @@ export const getStaticProps: GetStaticProps = async (content) => {
 
     const promises = list.results.map((pokemon: any) => {
         return fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon.name}`)
-        .then(res => res.json());
+        .then(res => res.json())
+        .then(res => {
+            return {
+                name: res.name, 
+                exp: res.base_experience, 
+                image: res.sprites.other.dream_world.front_default,
+            }
+        })
     })
 
     const products = await Promise.all(promises);
@@ -57,11 +64,11 @@ const Products = ({products, pageNumber}: any) => {
                                 const results = 
                                 <div key={e.name} className='product'> 
                                     <div className='image-wrap'>
-                                        <img className='image' src={e.sprites.other.dream_world.front_default ? e.sprites.other.dream_world.front_default : e.sprites.other['official-artwork'].front_default} alt={e.name}></img>
+                                        <img className='image' src={e.image} alt={e.name}></img>
                                     </div>
 
                                     <div className='description-wrap'>
-                                        <div className='price'>${e.base_experience? e.base_experience.toFixed(2) : (e.id/3).toFixed(2)}</div>
+                                        <div className='price'>${e.exp? e.exp.toFixed(2) : (e.id/3).toFixed(2)}</div>
                                         <div className='name'>{e.name}</div>
                                     </div>
                                 </div>
