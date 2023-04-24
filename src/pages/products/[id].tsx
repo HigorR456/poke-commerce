@@ -22,7 +22,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
 export const getStaticProps: GetStaticProps = async (content) => {
     const { params }: any = content
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${params.id === 1 ? 1 : (params.id - 1) * 20}`);
+    
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=20&offset=${params.id === '1' ? '0' : ((+params.id - 1) * 20).toString()}`);
     const list = await response.json();
 
     const promises = list.results.map((pokemon: any) => {
