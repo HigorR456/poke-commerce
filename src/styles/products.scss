@@ -9,17 +9,22 @@
                 display: grid;
                 grid-template-columns: 288px 288px 288px 288px;
                 gap: 16px;
+                
 
-                @media all and (max-width: 1200px) { grid-template-columns: auto auto}
-                @media all and (max-width: 620px) { gap: 1px;}
+                @media all and (max-width: 1200px) { grid-template-columns: 288px 288px}
+                @media all and (max-width: 620px) { gap: 1px; grid-template-columns: 50% 50%}
+
+                width: 100%;
+                justify-content: center;
                 .product {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
 
                     background: white;
-                    max-height: 512px;
+                    height: 512px;
                     min-height: 300px;
+                    width: 100%;
                     max-width: 288px;
                     border-radius: 3px;
                     @media all and (max-width: 620px) { border-radius: 0;}

@@ -17,7 +17,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
     
     return { 
         paths: pages,
-        fallback: 'blocking', }
+        fallback: false, }
 }
 
 export const getStaticProps: GetStaticProps = async (content) => {
