@@ -1,15 +1,11 @@
-import {useState} from 'react'
 import Header from '../../components/header'
 import Footer from '../../components/footer'
 import Link from 'next/link'
 import { GetStaticProps, GetStaticPaths } from 'next'
+import { GrNext, GrPrevious } from 'react-icons/gr'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-    //const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20&offset=0');
-    //const list = await response.json();
-
     let pages = [];
-    //for (let i = 0; i < (Math.ceil(list.count/20)); i++)
     for (let i = 1; i < 9; i++) {
         pages.push({ params: { id: i.toString() } });
         console.log(pages);
@@ -47,11 +43,9 @@ export const getStaticProps: GetStaticProps = async (content) => {
 }
 
 const Products = ({products, pageNumber}: any) => {
+
     const data = (products?.products);
     const page = ([...pageNumber?.page]);
-
-    const handleNavigation = (e: any) => {
-    }
 
     return (
         <>
@@ -64,6 +58,7 @@ const Products = ({products, pageNumber}: any) => {
                             {data?.map((e: any) => {
                                 const results = 
                                 <div key={e.name} className='product'> 
+                                <Link href={'pokemon/'+ e.name} className='pokemon-link'>
                                     <div className='image-wrap'>
                                         <img className='image' src={e.image} alt={e.name}></img>
                                     </div>
@@ -72,6 +67,7 @@ const Products = ({products, pageNumber}: any) => {
                                         <div className='price'>${e.exp? e.exp.toFixed(2) : (e.id/3).toFixed(2)}</div>
                                         <div className='name'>{e.name}</div>
                                     </div>
+                                    </Link>
                                 </div>
                                 return results
                             })}
@@ -80,11 +76,13 @@ const Products = ({products, pageNumber}: any) => {
 
 
                         <div className="navigation-wrap">
-                            <div>Page {page}</div>
-                            <Link href={'/products/'+(page?.length > 1 ? +(page[0] +page[1]) -1 : (+page[0] - 1))}>
-                            <button id='prev' onClick={handleNavigation}>Prev</button></Link>
-                           <Link href={'/products/'+(page?.length > 1 ? +(page[0] +page[1]) +1 : (+page[0] +1))}>
-                            <button id='next' onClick={handleNavigation}>Next</button></Link>
+                            
+                            <Link href={'/products/'+(page?.length > 1 ? +(page[0] +page[1]) -1 : (+page[0] - 1))} className={page[0] === '1' ? 'link disabled' : 'link'}><GrPrevious /></Link>
+
+                            <div className='page-number'>{page}</div>
+
+                            <Link href={'/products/'+(page?.length > 1 ? +(page[0] +page[1]) +1 : (+page[0] +1))} className={page[0] === '8' ? 'link disabled' : 'link'}><GrNext /></Link>
+
                         </div>
                     </div>
                 </section>

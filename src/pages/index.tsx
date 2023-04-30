@@ -58,7 +58,7 @@ export default function Home() {
                 </div>
               </div>
               <div className='buy-now-wrap'>
-                <Link href='/' className='buy-now-link' >Buy your Pokemon Now!</Link>
+                <Link href='/products/1' className='buy-now-link' >Buy your Pokemon Now!</Link>
               </div>
             </div>
           </div>
@@ -117,7 +117,7 @@ export default function Home() {
               <div className='types-wrap'>
                 <div className='box'>
                   <div className='back-box'></div>
-                  <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/146.png'></img>
+                  <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/136.png'></img>
                   <div className='text-wrap'>
                     <span>Fire Type</span>
                     <button>See more</button>
@@ -125,7 +125,7 @@ export default function Home() {
                 </div>
 
                 <div className='box'>
-                  <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/382.png'></img>
+                  <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/134.png'></img>
                   <div className='text-wrap'>
                     <span>Water Type</span>
                     <button>See more</button>
@@ -133,15 +133,15 @@ export default function Home() {
                 </div>
 
                 <div className='box'>
-                  <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/652.png'></img>
+                  <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/135.png'></img>
                   <div className='text-wrap'>
-                    <span>Grass Type</span>
+                    <span>Electric Type</span>
                     <button>See more</button>
                   </div>
                 </div>
 
                 <div className='box'>
-                  <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/143.png'></img>
+                  <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/133.png'></img>
                   <div className='text-wrap'>
                     <span>Normal Type</span>
                     <button>See more</button>
