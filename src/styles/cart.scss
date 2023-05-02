@@ -1,10 +1,203 @@
 
 
 .cart-wrap {
+    margin-right: 20px;
     width: 30px;
     height: 30px;
     cursor: pointer;
+    color: rgba(0, 0, 0, 0.6);
+
+    &:hover { color: black; }
     .icon {
         font-size: 30px;
     }
+}
+
+.cart {
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+    width: 600px;
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(250,250,150,0.5) 0%, rgba(255,255,150,1) 30%);
+
+    .cart-content {
+        margin: 80px 40px 80px 40px;
+        display: flex;
+        flex-direction: column;
+        height: calc(100vh - 160px);
+        font-weight: 600;
+
+        .your-cart { 
+            display: flex;
+            font-size: 20px;
+    
+            button {
+                font-size: 30px;
+                width: 30px;
+                height: 30px;
+                border: 0;
+                background: 0;
+                padding-right: 45px;
+
+                cursor: pointer;
+                color: rgba(0, 0, 0, 0.3);
+                &:hover {color: black;}
+            }
+    
+            div {
+                margin-left: 5px;
+                span {color: #3483fa;}
+            }
+        }
+        .cart-products {
+            overflow-y: auto;
+            .content {
+                margin-top: 20px;
+                margin-bottom: 20px;
+                display: flex;
+                height: 150px;
+
+                background: white;
+                border-radius: 3px;
+                box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+
+                .image-wrap {
+                    width: 35%;
+                    margin: 20px;
+                    img { height: 100%; }
+                }
+
+                .name-wrap {
+                    width: 50%;
+                    margin: 20px;
+                    .name { 
+                        height: 50%;
+                        text-transform: capitalize;
+                        font-size: 20px;
+                        font-weight: 700;
+                    }
+                    .quantity {
+                        height: 50%;
+                        display: flex;
+                        align-items: end;
+
+                        div {
+                            text-align: center;
+                            height: 25px;
+                            width: 25px;
+                        }
+
+                        button {
+                            border: 0;
+                            border-radius: 3px;
+                            background: #ebebeb;
+                            height: 25px;
+                            width: 25px;
+                            box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+                            cursor: pointer;
+                            &:hover {
+                                transition: 300ms;
+                                box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+                            }
+                        }
+                    }
+                }
+
+                .price-wrap {
+                    width: 15%;
+                    margin: 20px;
+                    text-align: right;
+                    .price {
+                        height: 50%;
+                    }
+                    button {
+                        border: 0;
+                        border-radius: 3px;
+                        background: #ebebeb;
+                        height: 25px;
+                        width: 25px;
+                        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+                        cursor: pointer;
+                        &:hover {
+                            transition: 300ms;
+                            box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
+                        }
+                    }
+                }
+            }
+        }
+        .empty-cart {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            width: 100%;
+            font-size: 20px;
+            .icon {
+                margin-bottom: 20px;
+                font-size: 135px;
+            }
+            button {
+                margin-top: 50px;
+                margin-bottom: 20px;
+                border: 0;
+                background: #ebebeb;
+                font-size: 20px;
+                height: 55px;
+                width: 220px;
+                border-radius: 3px;
+                box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+                &:hover {
+                    transition: 300ms;
+                    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+        .subtotal-wrap {
+            margin-top: auto;
+            .subtotal {
+                display: flex;
+                justify-content: space-between;
+                font-size: 20px;
+            }
+            .button-wrap {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+                button {
+                    border: 0;
+                    background: #ebebeb;
+                    border-radius: 3px;
+                    height: 55px;
+                    width: 220px;
+                    font-size: 20px;
+                    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+                    cursor: pointer;
+                    &:hover {
+                        transition: 300ms;
+                        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.background-block {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    backdrop-filter: brightness(0.5);
+}
+.show {
+    @keyframes slide-cart {from {right: -600px;} to {right: 0;}}
+    animation: slide-cart 300ms forwards;
+}
+.hide {
+    right: -600px;
 }

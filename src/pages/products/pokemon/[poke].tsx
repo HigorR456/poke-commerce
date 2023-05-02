@@ -9,7 +9,7 @@ import { useState, useContext } from 'react'
 import { BsShieldCheck, BsArrowReturnLeft, BsChevronDown } from 'react-icons/bs'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=6&offset=0');
+  const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1&offset=0');
   const list = await response.json();
 
   const promises = list.results.map((e:any) => {
@@ -19,7 +19,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths: pokemon,
-    fallback: false,
+    fallback: true,
   }
 }
 

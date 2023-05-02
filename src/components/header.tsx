@@ -2,25 +2,19 @@ import {useState} from 'react'
 import Link from 'next/link'
 import {TbPokeball} from 'react-icons/tb'
 import {GiHamburgerMenu} from 'react-icons/gi'
-import {GrClose} from 'react-icons/gr'
+import {AiOutlineClose} from 'react-icons/ai'
 import Cart from './cart'
 
 const Header = () => {
     const [toggleMenu, setToggleMenu] = useState<boolean>(false);
 
-    const handleToggleMenu = () => {
-        toggleMenu ? 
-        setToggleMenu(false) : 
-        setToggleMenu(true)
-    }
-
     return (
         <>
             <header className={toggleMenu ? 'header-wrap-mobile' : 'header-wrap'}>
                 <div className='content-wrap'>
-                    <div className='menu-wrap' onClick={handleToggleMenu}>
+                    <div className='menu-wrap' onClick={() => { toggleMenu? setToggleMenu(false) : setToggleMenu(true)}}>
                         <GiHamburgerMenu className={toggleMenu? 'menu-icon-hide' : 'menu-icon'} />
-                        <GrClose className={toggleMenu? 'menu-icon' : 'menu-icon-hide'} />
+                        <AiOutlineClose className={toggleMenu? 'menu-icon' : 'menu-icon-hide'} />
                     </div>
 
                     <div className='logo-wrap'>
