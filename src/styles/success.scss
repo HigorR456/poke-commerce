@@ -1,0 +1,57 @@
+
+.main-success-wrap {
+    section {
+        .container {
+            background: white;
+            box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                margin: 80px 40px 80px 40px;
+
+                .icon {
+                    font-size: 80px;
+                    color: rgb(0, 221, 0);
+                }
+
+                h2 {
+                    font-size: 40px;
+                    margin-bottom: 0;
+                    color: #3483fa;
+                }
+
+                p {
+                    font-size: 16px;
+                    a {
+                        text-decoration: none;
+                        color: #3483fa;
+                    }
+                }
+
+                .link {
+                    margin-top: 20px;
+                    button {
+                        border: 0;
+                        border-radius: 3px;
+                        width: 220px;
+                        height: 55px;
+                        background: #ebebeb;
+                        box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+                        font-size: 20px;
+                        cursor: pointer;
+
+                        &:hover {
+                            box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.3);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

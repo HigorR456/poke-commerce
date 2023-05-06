@@ -7,6 +7,19 @@ export const CartProvider = ({ children }: any) => {
     const [totalQty, setTotalQty] = useState<number>(0);
     const [totalValue, setTotalValue] = useState<number>(0);
 
+    useEffect(() => {
+      if (myCart.length !== 0) {
+        localStorage.setItem('myCart', JSON.stringify(myCart))
+      }
+    }, [myCart]);
+
+    useEffect(() => {
+      const storage = JSON.parse(localStorage.getItem('myCart')!);
+      if (storage) {
+        setMyCart(storage);
+      }
+    }, []);
+
     const handleAddToCart = (info: any, quantity: number) => {
       let didAmountChange = false;
       myCart.map((e:any) => {
@@ -63,7 +76,8 @@ export const CartProvider = ({ children }: any) => {
 
     return (
         <CartContext.Provider value={{
-          handleAddToCart, handleRemoveFromCart, handleDeleteItem, myCart, totalQty, totalValue}}>
+          handleAddToCart, handleRemoveFromCart, handleDeleteItem, myCart, totalQty, totalValue,
+          setMyCart, setTotalQty, setTotalValue}}>
             {children}
         </CartContext.Provider>
     );

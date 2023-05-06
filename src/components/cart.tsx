@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import Link from 'next/link'
 import { CartContext } from '../context/CartContext'
 import { BsFillCartFill, BsArrowReturnLeft, BsCart4 } from 'react-icons/bs'
@@ -7,10 +7,22 @@ const Cart = () => {
     const [showCart, setShowCart] = useState<boolean>(false);
     const { handleAddToCart, handleRemoveFromCart, handleDeleteItem, myCart, totalQty, totalValue } = useContext(CartContext);
 
+    useEffect(() => {
+        console.log('hey')
+    }, [myCart])
+
     return (
         <>
             <div className='cart-wrap' onClick={() => {showCart ? setShowCart(false) : setShowCart(true)}}>
-                <BsFillCartFill className='icon' />
+                <BsFillCartFill className='icon'/>
+                <div className={totalQty < 1 ? 'cart-qty hide' : 'cart-qty'}>{totalQty}</div>
+            </div>
+
+            <div className='cart-mobile-wrap'>
+                <Link href='/shopping-cart' className='cart-link'>
+                    <BsFillCartFill className='icon'/>
+                    <div className={totalQty < 1 ? 'cart-qty hide' : 'cart-qty'}>{totalQty}</div>
+                </Link>
             </div>
 
             {showCart && (
@@ -64,7 +76,7 @@ const Cart = () => {
                             <div>${totalValue.toFixed(2)}</div>
                         </div>
                         <div className='button-wrap'>
-                            <button>Checkout</button>
+                            <Link href='/shopping-cart'><button>Proceed</button></Link>
                         </div>
                     </div>)}
 
