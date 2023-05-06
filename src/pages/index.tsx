@@ -71,64 +71,83 @@ export default function Home() {
 
               <div className="deals-wrap">
 
-                <div className='deal-box'>
-                  <CiDiscount1 className='deal-icon'  />
-                  <div className="deal-text">Under 50% off</div>
-                </div>
+                <Link href='/products/1' className='link'>
+                  <div className='deal-box'>
+                    <CiDiscount1 className='deal-icon'  />
+                    <div className="deal-text">Under 50% off</div>
+                  </div>
+                </Link>
 
-                <div className='deal-box'>
-                  <RiCoupon3Line className='deal-icon'  />
-                  <div className="deal-text">
-                  Discount coupon</div>
-                </div>
+                <Link href='/products/1' className='link'>
+                  <div className='deal-box'>
+                    <RiCoupon3Line className='deal-icon'  />
+                    <div className="deal-text">
+                    Discount coupon</div>
+                  </div>
+                </Link>
 
-                <div className='deal-box'>
-                  <BsCoin className='deal-icon'  />
-                  <div className="deal-text">
-                  Essentials under $25</div>
-                </div>
+                <Link href='/products/1' className='link'>
+                  <div className='deal-box'>
+                    <BsCoin className='deal-icon'  />
+                    <div className="deal-text">
+                    Essentials under $25</div>
+                  </div>
+                </Link>
 
-                <div className='deal-box'>
-                  <HiTrendingUp className='deal-icon'  />
-                  <div className="deal-text">
-                  Trending</div>
-                </div>
+                <Link href='/products/1' className='link'>
+                  <div className='deal-box'>
+                    <HiTrendingUp className='deal-icon'  />
+                    <div className="deal-text">
+                    Trending</div>
+                  </div>
+                </Link>
 
-                <div className='deal-box'>
-                  <GiPodium className='deal-icon'  />
-                  <div className="deal-text">
-                  Most popular</div>
-                </div>
+                <Link href='/products/1' className='link'>
+                  <div className='deal-box'>
+                    <GiPodium className='deal-icon'  />
+                    <div className="deal-text">
+                    Most popular</div>
+                  </div>
+                </Link>
 
-                <div className='deal-box'>
-                  <TbTruckDelivery className='deal-icon'  />
-                  <div className="deal-text">
-                  Free delivery</div>
-                </div>
+                <Link href='/products/1' className='link'>
+                  <div className='deal-box'>
+                    <TbTruckDelivery className='deal-icon'  />
+                    <div className="deal-text">
+                    Free delivery</div>
+                  </div>
+                </Link>
 
-                <div className='deal-box'>
-                  <MdDiscount className='deal-icon' />
-                  <div className="deal-text">
-                  Exclusive offers</div>
-                </div>
+                <Link href='/products/1' className='link'>
+                  <div className='deal-box'>
+                    <MdDiscount className='deal-icon' />
+                    <div className="deal-text">
+                    Exclusive offers</div>
+                  </div>
+                </Link>
 
-                </div>
+              </div>
 
               <div className='types-wrap'>
+
                 <div className='box'>
                   <div className='back-box'></div>
                   <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/136.png'></img>
                   <div className='text-wrap'>
                     <span>Fire Type</span>
-                    <button>See more</button>
+                    <Link href='/products/7' className='link'>
+                      <button>See more</button>
+                    </Link>
                   </div>
                 </div>
-
+              
                 <div className='box'>
                   <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/134.png'></img>
                   <div className='text-wrap'>
                     <span>Water Type</span>
-                    <button>See more</button>
+                    <Link href='/products/7' className='link'>
+                      <button>See more</button>
+                    </Link>
                   </div>
                 </div>
 
@@ -136,7 +155,9 @@ export default function Home() {
                   <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/135.png'></img>
                   <div className='text-wrap'>
                     <span>Electric Type</span>
-                    <button>See more</button>
+                    <Link href='/products/7' className='link'>
+                      <button>See more</button>
+                    </Link>
                   </div>
                 </div>
 
@@ -144,9 +165,12 @@ export default function Home() {
                   <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/133.png'></img>
                   <div className='text-wrap'>
                     <span>Normal Type</span>
-                    <button>See more</button>
+                    <Link href='/products/7' className='link'>
+                      <button>See more</button>
+                    </Link>
                   </div>
                 </div>
+
               </div>
 
             </div>

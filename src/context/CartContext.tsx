@@ -8,15 +8,18 @@ export const CartProvider = ({ children }: any) => {
     const [totalValue, setTotalValue] = useState<number>(0);
 
     useEffect(() => {
+      const cartInfo = [myCart, totalQty, totalValue];
       if (myCart.length !== 0) {
-        localStorage.setItem('myCart', JSON.stringify(myCart))
+        localStorage.setItem('cartInfo', JSON.stringify(cartInfo))
       }
     }, [myCart]);
 
     useEffect(() => {
-      const storage = JSON.parse(localStorage.getItem('myCart')!);
+      const storage = JSON.parse(localStorage.getItem('cartInfo')!);
       if (storage) {
-        setMyCart(storage);
+        setMyCart(storage[0]);
+        setTotalQty(storage[1]);
+        setTotalValue(storage[2]);
       }
     }, []);
 

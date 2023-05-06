@@ -132,38 +132,45 @@
 
                 margin-top: 0px;
                 margin-bottom: 40px;
-                .deal-box {
-                    display: grid;
-                    grid-template-rows: auto 50px;
-                    align-items: center;
-                    justify-content: center;
-                    min-width: 150px;
-                    height: 150px;
-                    background: white;
-                    text-align: center;
-                    border-radius: 3px;
 
-                    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-                    cursor: pointer;
+                .link {
+                    text-decoration: none;
+                    color: black;
 
-                    margin-top: 40px;
-                    margin-bottom: auto;
+                    .deal-box {
+                        display: grid;
+                        grid-template-rows: auto 50px;
+                        align-items: center;
+                        justify-content: center;
+                        min-width: 150px;
+                        max-width: 150px;
+                        height: 150px;
+                        background: white;
+                        text-align: center;
+                        border-radius: 3px;
     
-                    &:hover {
-                        background: rgb(255,255,150);
-                        transition: 300ms;
-                        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
-                        .deal-icon { background: white; }
-                    }
-                    .deal-icon {
-                        margin-inline: auto;
-                        font-size: 75px;
-                        background: rgb(255,255,150);
-                        border-radius: 30px;
-                        overflow: visible;
-                    }
-                    .deal-text {
-                        padding-inline: 15px;
+                        box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+                        cursor: pointer;
+    
+                        margin-top: 40px;
+                        margin-bottom: auto;
+        
+                        &:hover {
+                            background: rgb(255,255,150);
+                            transition: 300ms;
+                            box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
+                            .deal-icon { background: white; }
+                        }
+                        .deal-icon {
+                            margin-inline: auto;
+                            font-size: 75px;
+                            background: rgb(255,255,150);
+                            border-radius: 30px;
+                            overflow: visible;
+                        }
+                        .deal-text {
+                            padding-inline: 15px;
+                        }
                     }
                 }
             }
@@ -175,10 +182,16 @@
                 flex-wrap: wrap;
 
                 margin-bottom: 80px;
+                
                 .box {
                     display: flex;
                     align-items: center;
                     box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
+                    transition: 300ms;
+                    cursor: pointer;
+                    &:hover {
+                        box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.3);
+                    }
                     border-radius: 3px;
                     width: 590px;
                     height: 200px;
@@ -212,11 +225,10 @@
                             height: 55px;
                             background: rgba(0, 0, 0, 0.1);
                             border: 0;
-                            transition: 300ms;
                             box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.1);
-                            cursor: pointer;
                             font-size: 16px;
-
+                            transition: 300ms;
+                            cursor: pointer;
                             &:hover {
                                 box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.3);
                             }
