@@ -13,7 +13,9 @@
                 flex-direction: column;
                 text-align: center;
                 align-items: center;
-                margin: 80px 40px 80px 40px;
+                padding-top: 40px;
+                padding-bottom: 40px;
+                margin: 120px 40px 120px 40px;
 
                 .icon {
                     font-size: 80px;
@@ -41,7 +43,8 @@
                         border-radius: 3px;
                         width: 220px;
                         height: 55px;
-                        background: #ebebeb;
+                        background: #3483fa;
+                        color: white;
                         box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
                         font-size: 20px;
                         cursor: pointer;
