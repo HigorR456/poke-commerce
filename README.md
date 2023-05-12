@@ -1,3 +1,59 @@
+<div align='center'><img src='https://github.com/HigorR456/poke-commerce/assets/109878939/fad585ca-e6cc-4ec2-be30-11dab74e9e80'/></div>
+
+<h2>About the project</h2>
+
+This project is a commerce website built with React, Next.js and SASS. Concept based on SSG where pages are pre-rendered on build time, increasing performance and with fast navigation. It features a modern and intuitive design based on Mercado Libre commerce.
+
+👉Live demo: https://pokemon-commerce.netlify.app/
+
+<h3>Build with:</h3>
+
+» React JS <br>
+» Next.js <br>
+» SASS
+
+<h2>📸Screenshots of the Project</h2>
+<br>
+<h3 align='center'>🏡 Home Page</h3>
+
+<div align='center'>
+<img src='https://github.com/HigorR456/poke-commerce/assets/109878939/d39203b5-da04-47ec-9af0-b2d4b100e017'/>
+</div>
+
+<br><br>
+<h3 align='center'>👇Products Navigation Page</h3>
+
+<div align='center'>
+<img src='https://github.com/HigorR456/poke-commerce/assets/109878939/d59c9290-ecbb-4473-b8f9-2f021beda354'/>
+</div>
+
+<br>
+<br>
+<h3 align='center'>🎁 Product Page</h3>
+
+<div align='center'>
+<img src='https://github.com/HigorR456/poke-commerce/assets/109878939/d71c7fa5-c2de-4ec9-a642-aa6970ccc602'/>
+</div>
+
+<br>
+<br>
+<h3 align='center'>🛒Shopping Cart</h3>
+
+<div align='center'>
+<img src='https://github.com/HigorR456/poke-commerce/assets/109878939/69f60e4d-9008-494c-b79e-580b9a74d725'/>
+</div>
+
+<br>
+<br>
+<h3 align='center'>👏Success Page<h3>
+
+<div align='center'>
+<img src='https://github.com/HigorR456/poke-commerce/assets/109878939/7213e21a-a1c9-4fa1-811e-7fa95bf167f1'/>
+</div>
+
+____________________________________________________________________________________________________
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
