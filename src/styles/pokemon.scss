@@ -17,8 +17,8 @@
 }
 .start {
     @keyframes notification {
-        0% { top: 0; }
-        30% { top: 95px; }
+        0% { top: 0; opacity: 1; }
+        30% { top: 95px; opacity: 1; }
         60% { top: 95px; opacity: 1; }
         100% { top: 95px; opacity: 0; }
     }
@@ -26,6 +26,7 @@
     animation: notification .6s forwards;
 }
 .stop {
+    opacity: 0;
     top: 0px;
 }
 //product styles
